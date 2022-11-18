@@ -11,7 +11,7 @@ const db = require('./models')
 
 // access controllers
 const trailsCtrl = require('./controllers/trails')
-
+const campsCtrl = require('./controllers/camps')
 
 // +-+-+-+-+-+-+-+-+-+-+
 // |M|I|D|D|L|E|W|A|R|E|
@@ -45,8 +45,9 @@ app.get('/', (req, res) => {
     })
 })
 
+// app.use('/trail', trailsCtrl)
 
-
+// app.use('/camp', campsCtrl)
 
 // +-+-+-+-+-+-+-+-+
 // |L|I|S|T|E|N|E|R|
