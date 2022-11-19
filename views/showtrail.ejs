@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="stylesheet" href="/public/styles/showTrails.css"/>
+  <head>
+    <link rel="stylesheet" href="styles/showTrail.css" />
     <title>Trails</title>
-</head>
-<body>
-    <div class="flex-container">
-        <a href="/views/index.ejs"><button>Home</button></a>
-        <a href="/trail.js/<%= trail._id %>/edit">
+  </head>
+  <body>
+    <div class="trailPage" id="container">
+      <a href="/"><button>Home</button></a>
     </div>
-</body>
+    <div>
+      <% for (let trail of trails) {%>
+      <li class="db-trails">
+        <h3><%= trail.name %></h3>
+        <p><% trail.description %></p>
+        <br />
+      </li>
+      <% } %>
+    </div>
+  </body>
 </html>

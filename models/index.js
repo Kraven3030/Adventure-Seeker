@@ -22,3 +22,4 @@ mongoose.connection.on('error', (error) => {
 
 module.exports.Trail = require('./trail')
 module.exports.Camp = require('./camp')
+

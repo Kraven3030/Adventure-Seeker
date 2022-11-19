@@ -37,17 +37,35 @@ app.get('/', (req, res) => {
     db.Trail.find({}, (err, trails) => {
         db.Camp.find({}, (err, camps) => {
             res.render('index', {
-                trails: trails,
-                camps: camps,
                 tabTitle: "Adventure Seeker"
             })
         })
     })
 })
 
-// app.use('/trail', trailsCtrl)
+app.get('/showTrail.ejs', (req, res) => {
+    db.Trail.find({}, (err, trails) => {
+        res.render('showTrail', {
+            trails: trails,
+            tabTitle: "Trails"
+        })
+    })
+})
 
-// app.use('/camp', campsCtrl)
+app.get('/showCamp.ejs', (req, res) => {
+    db.Camp.find({}, (err, camps) => {
+        res.render('showCamp', {
+            camps: camps,
+            tabTitle: "Camps"
+        })
+    })
+})
+
+
+
+app.use('/trail', trailsCtrl)
+
+app.use('/camp', campsCtrl)
 
 // +-+-+-+-+-+-+-+-+
 // |L|I|S|T|E|N|E|R|
