@@ -6,9 +6,9 @@ const Schema = mongoose.Schema
 const trailSchema = new Schema(
     {
         name: { type: String, required: true },
-        distance: { type: Number, reuired: true },
-        difficulty: { type: String },
-        image: { type: String },
+        distance: { type: String, reuired: true },
+        difficulty: { type: String, required: true },
+        image: { type: String, required: true },
         description: { type: String, required: true },
         location: { type: String, required: true }
     }

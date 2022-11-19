@@ -15,7 +15,7 @@ const seed_trails = [
         difficulty: "Moderate",
         image: "/assets/rodeolagoon.jpeg",
         description: "Generally considered a moderately challenging route, it takes an average of 1 h 40 min to complete. This is a popular trail for hiking, running, and walking, but you can still enjoy some solitude during quieter times of day.",
-        loaction: "Marin Headlands"
+        location: "Marin Headlands"
     },
     {
         name: "Point Bonita Lighthouse",
@@ -23,7 +23,7 @@ const seed_trails = [
         difficulty: "Easy",
         image: "/assets/pointbonitalighthouse.jpeg",
         description: "Generally considered an easy route, it takes an average of 25 min to complete. The trail is open year-round and is beautiful to visit anytime.",
-        loaction: "Golden Gate National Recreation Area"
+        location: "Golden Gate National Recreation Area"
     },
     {
         name: "Rodeo Beach Coastal Trail",
@@ -86,7 +86,7 @@ db.Trail.deleteMany({}, (err, trails) => {
             if (err) {
                 console.log('Error occured in insertMany', err)
             } else {
-                console.log('Created', trails.length, "products")
+                console.log('Created', trails.length, "trails")
                 process.exit()
             }
         })
@@ -103,7 +103,7 @@ db.Camp.deleteMany({}, (err, camps) => {
             if (err) {
                 console.log('Error occured in insertMany', err)
             } else {
-                console.log('Created', camps.length, "log entries")
+                console.log('Created', camps.length, "camps")
             }
         })
     }
