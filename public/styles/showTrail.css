@@ -1,4 +1,16 @@
 body {
     background-color: white;
+    list-style:none
 }
 
+.db-trails {
+    justify-content: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.show {
+    display: block;
+}

@@ -7,15 +7,74 @@
   <body>
     <div class="trailPage" id="container">
       <a href="/"><button>Home</button></a>
+      <div id="theAddModal">
+        <div class="modal1-content"></div>
+            <span class="closeAddModal">&times;</span>
+            <button id="addModalBtn">Add Trail</button>
+        </div>   
+      </div>
+      <form class="hidden" id="modalForm" action="/showtrail/" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"/>
+        <label for="distance">Distance(mi):</label>
+        <input type="text" id="distance" name="distance"/>
+        <label for="image">Image:</label>
+        <input type="text" id="image" name="image"/>
+        <label for="description">Description:</label>
+       <textarea name="description"></textarea>
+       <label for="location">Location:</label>
+       <input type="text" id="location" name="location"/>
+        <button type="submit">Add Trail</button>
+    </form>
     </div>
     <div>
       <% for (let trail of trails) {%>
       <li class="db-trails">
         <h3><%= trail.name %></h3>
-        <p><% trail.description %></p>
+        <h5>Location: <%= trail.location%></h5>
+        <img src="<%=trail.image%>" width="300" />
+        <p><%= trail.description %></p>
+        <h5>Distance: <%= trail.distance%></h5>
+        <h5>Difficulty: <%= trail.difficulty%></h5>
         <br />
+        <h4>
+          <div id="theEditModal">
+            <a id="btn" href="/showTrail/<%= trail._id %>/edit"
+              ><button>Edit trail</button></a
+            >
+          </div>
+        </h4>
+        <form
+          id="btn"
+          action="/trail/<%= trail._id%>?_method=DELETE"
+          method="POST"
+        >
+          <button type="submit" id="delete">Delete Trail</button>
+        </form>
+        <% } %>
       </li>
-      <% } %>
     </div>
+    <script>
+        //Event listeners for Add Trail Modal
+        window.addEventListener("load", () => {
+            const modal1 = document.getElementById("theAddModal");
+      const addModal = document.getElementById("addModalBtn");
+      const closeModal = document.getElementsByClassName("closeAddModal")[0];
+      const form = document.getElementById("modalForm")
+      function openAddModal() {
+            form.classList.remove("hidden")
+            form.classList.add("show")
+      }
+
+      function closeAddModal() {
+        form.classList.remove("show")
+        form.classList.add("hidden")
+      }
+
+      addModal.addEventListener("click", openAddModal);
+      closeModal.addEventListener("click", closeAddModal);
+        })
+      
+    </script>
   </body>
 </html>

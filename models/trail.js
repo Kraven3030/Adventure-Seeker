@@ -6,7 +6,7 @@ const Schema = mongoose.Schema
 const trailSchema = new Schema(
     {
         name: { type: String, required: true },
-        distance: { type: String, reuired: true },
+        distance: { type: String, required: true },
         difficulty: { type: String, required: true },
         image: { type: String, default: "https://sainfoinc.com/wp-content/uploads/2018/02/image-not-available-570x570.jpg" },
         description: { type: String, required: true },
@@ -19,3 +19,4 @@ const Trail = mongoose.model('Trail', trailSchema)
 
 // Export the Trail model to index.js
 module.exports = Trail
+

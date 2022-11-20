@@ -63,6 +63,7 @@ app.get('/showCamp.ejs', (req, res) => {
 
 
 
+
 app.use('/trail', trailsCtrl)
 
 app.use('/camp', campsCtrl)
