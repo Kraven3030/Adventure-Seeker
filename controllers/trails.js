@@ -42,15 +42,6 @@ router.delete('/:id', (req, res) => {
 
 })
 
-//Update route
-router.put('/', (req, res) => {
-    db.Trail.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, trails) => {
-        // res.send(entry)
-        res.redirect('/showtrail/' + trails._id)
-    })
-    // res.send(req.params.id)
-})
-
 //Edit route
 router.get('/:id/edit', (req, res) => {
     db.Trail.findById(req.params.id, (err, trails) => {
@@ -61,13 +52,12 @@ router.get('/:id/edit', (req, res) => {
 })
 
 
-// router.put('/', (req, res) => {
-//     db.Trail.findById(req.params.id, (err, trails) => {
-//         db.Product.findByIdAndUpdate(req.params.id, { new: true }, (err, trails) => {
-//             res.redirect('/showtrail/' + trails._id)
-//         })
-//     })
-// })
+//Update route
+router.put('/:id', (req, res) => {
+    db.Trail.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, trails) => {
+        res.redirect('/showtrail/' + trails._id)
+    })
+})
 
 
 module.exports = router;

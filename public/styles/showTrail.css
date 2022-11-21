@@ -7,6 +7,9 @@ body {
     justify-content: center;
 }
 
+/* ===================================================
+Add Trail Modal CSS */
+
 .modal1 {
     display: none;
     position: fixed;
@@ -43,6 +46,49 @@ body {
 }
 
 @keyframes addModalOpen {
+    from{ opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* =================================================
+Edit Trail Modal CSS */
+
+.modal2 {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5)
+}
+
+.modal2-content {
+    background-color: gray;
+    margin: 40% auto;
+    padding: 20px;
+    width: 70%;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.3);
+    animation-name: editModalOpen;
+    animation-duration: 1s;
+}
+
+.modal2CloseBtn {
+    float: right;
+    color: white;
+    font-size: 20px;
+    
+}
+
+.modal2CloseBtn:hover, .modal2CloseBtn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@keyframes editModalOpen {
     from{ opacity: 0;}
     to {opacity: 1;}
 }
