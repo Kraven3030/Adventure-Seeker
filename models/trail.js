@@ -20,3 +20,4 @@ const Trail = mongoose.model('Trail', trailSchema)
 // Export the Trail model to index.js
 module.exports = Trail
 
+

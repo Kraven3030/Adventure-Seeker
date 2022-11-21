@@ -7,10 +7,42 @@ body {
     justify-content: center;
 }
 
-.hidden {
+.modal1 {
     display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5)
 }
 
-.show {
-    display: block;
+.modal1-content {
+    background-color: gray;
+    margin: 40% auto;
+    padding: 20px;
+    width: 70%;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.3);
+    animation-name: addModalOpen;
+    animation-duration: 1s;
+}
+
+.modal1CloseBtn {
+    float: right;
+    color: white;
+    font-size: 20px;
+    
+}
+
+.modal1CloseBtn:hover, .modal1CloseBtn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@keyframes addModalOpen {
+    from{ opacity: 0;}
+    to {opacity: 1;}
 }

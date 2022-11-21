@@ -56,7 +56,6 @@ router.get('/:id/edit', (req, res) => {
     db.Trail.findById(req.params.id, (err, trails) => {
         res.render("edittrail", {
             trails: trails,
-            tabTitle: "Edit"
         })
     })
 })
