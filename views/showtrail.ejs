@@ -40,9 +40,10 @@
         <h5>Difficulty: <%= trail.difficulty%></h5>
         <h4>
           <div id="theEditModal">
-            <a id="btn" href="/showTrail/<%= trail._id %>/edit"
-              ><button>Edit trail</button></a
-            >
+            <div id="modal2-content">
+                <span class="closeEditModal">&times;</span>
+               <a href="/showtrail/<%= trail._id %>/edit"><button id="editModalBtn">Edit trail</button></a>
+            </div>
           </div>
         </h4>
         <form
@@ -59,9 +60,10 @@
         //Event listeners for Add Trail Modal
         window.addEventListener("load", () => {
             const modal1 = document.getElementById("theAddModal");
-      const addModal = document.getElementById("addModalBtn");
-      const closeModal = document.getElementsByClassName("closeAddModal")[0];
+            const addModal = document.getElementById("addModalBtn");
+            const closeModal = document.getElementsByClassName("closeAddModal")[0];
       const form = document.getElementById("modalForm")
+
       function openAddModal() {
             form.classList.remove("hidden")
             form.classList.add("show")
@@ -75,7 +77,24 @@
       addModal.addEventListener("click", openAddModal);
       closeModal.addEventListener("click", closeAddModal);
         })
-      
+      //==============================================================
+        // Event listener for Edit Modals
+        window.addEventListener("load", () => {
+            const modal2 = document.getElementById("theEditModal");
+            const editModal = document.getElementById("editModalBtn");
+            const closeEditModal = docutment.getElementsByClassName("closeEditModal")[0];
+            const form2 = document.getElementById("editForm");
+            function openEditModal() {
+                form2.classList.remove("hidden")
+                form2.classList.add("show")
+            }
+            function closeModal2() {
+                form2.classList.remove("show")
+                form2.classList.add("hidden")
+            }
+            editModal.addEventListener("click", openEditModal );
+            closeEditModal.addEventListener("click", closeModal2);
+        })
     </script>
   </body>
 </html>
