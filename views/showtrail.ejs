@@ -2,9 +2,9 @@
 <html lang="en">
   <head>
     <link rel="stylesheet" href="styles/showTrail.css" />
-    <title>Trails</title>
-  </head>
-  <body>
+</head>
+<title>Trails</title>
+<body>
     <div class="trailPage" id="container">
       <a href="/"><button>Home</button></a>
       <div id="theAddModal">
@@ -13,13 +13,15 @@
             <button id="addModalBtn">Add Trail</button>
         </div>   
       </div>
-      <form class="hidden" id="modalForm" action="/showtrail/" method="post">
-        <label for="name">Name:</label>
+      <form class="hidden" id="modalForm" action="/trails" method="post">
+        <label for="name">Name of Trail:</label>
         <input type="text" id="name" name="name"/>
         <label for="distance">Distance(mi):</label>
         <input type="text" id="distance" name="distance"/>
-        <label for="image">Image:</label>
-        <input type="text" id="image" name="image"/>
+        <label for="difficulty">Difficulty:</label>
+        <input type="text" id="difficulty" name="difficulty"/>
+        <label for="image">Image URL:</label>
+        <input type="text" id="image" name="image" placeholder="optional"/>
         <label for="description">Description:</label>
        <textarea name="description"></textarea>
        <label for="location">Location:</label>
@@ -36,7 +38,6 @@
         <p><%= trail.description %></p>
         <h5>Distance: <%= trail.distance%></h5>
         <h5>Difficulty: <%= trail.difficulty%></h5>
-        <br />
         <h4>
           <div id="theEditModal">
             <a id="btn" href="/showTrail/<%= trail._id %>/edit"
@@ -46,13 +47,13 @@
         </h4>
         <form
           id="btn"
-          action="/trail/<%= trail._id%>?_method=DELETE"
+          action="/trails/<%= trail._id%>?_method=DELETE"
           method="POST"
         >
           <button type="submit" id="delete">Delete Trail</button>
         </form>
+        </li>
         <% } %>
-      </li>
     </div>
     <script>
         //Event listeners for Add Trail Modal

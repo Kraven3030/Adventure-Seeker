@@ -43,18 +43,18 @@ app.get('/', (req, res) => {
     })
 })
 
-app.get('/showTrail.ejs', (req, res) => {
+app.get('/showtrail', (req, res) => {
     db.Trail.find({}, (err, trails) => {
-        res.render('showTrail', {
+        res.render('showtrail', {
             trails: trails,
             tabTitle: "Trails"
         })
     })
 })
 
-app.get('/showCamp.ejs', (req, res) => {
+app.get('/showcamp', (req, res) => {
     db.Camp.find({}, (err, camps) => {
-        res.render('showCamp', {
+        res.render('showcamp', {
             camps: camps,
             tabTitle: "Camps"
         })
@@ -64,9 +64,9 @@ app.get('/showCamp.ejs', (req, res) => {
 
 
 
-app.use('/trail', trailsCtrl)
+app.use('/trails', trailsCtrl)
 
-app.use('/camp', campsCtrl)
+app.use('/camps', campsCtrl)
 
 // +-+-+-+-+-+-+-+-+
 // |L|I|S|T|E|N|E|R|

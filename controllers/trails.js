@@ -3,29 +3,29 @@ const db = require('../models');
 const express = require('express');
 const router = express.Router();
 
-// All routes on this page are prefixed with "localhost:8000/trail"
+// All routes on this page are prefixed with "localhost:8000"
 
 // NEW ROUTE: Will render a form that the user will use to create a new trail
-router.get('/showtrail', (req, res) => {
-    res.render('showtrail', {
-        tabTitle: "Trail Creation"
+router.get('/', (req, res) => {
+    res.render('/showtrail/', {
+        tabTitle: "Trail"
     })
 })
 
 // CREATE ROUTE
-router.post('/showtrail/', (req, res) => {
+router.post('/', (req, res) => {
     if (req.body.visited) {
         req.body.visited = true
     } else {
         req.body.visited = false
     }
     db.Trail.create(req.body, (err, trails) => {
-        res.redirect('/showtrail/' + trails._id)
+        res.redirect('/showtrail')
     })
 })
 
 //SHOW ROUTE
-router.get('/showtrail:id', (req, res) => {
+router.get('/:id', (req, res) => {
     db.Trail.findById(req.params.id, (err, trails) => {
         res.render("showtrail", {
             trails: trails,
@@ -35,43 +35,40 @@ router.get('/showtrail:id', (req, res) => {
 })
 
 //Delete route
-router.delete('/showtrail:id', (req, res) => {
-    db.Trail.findByIdAndRemove(req.params.id, (err, products) => {
+router.delete('/:id', (req, res) => {
+    db.Trail.findByIdAndRemove(req.params.id, (err, trails) => {
         res.redirect('/showtrail/')
     })
 
 })
 
 //Update route
-router.put('/showTrail.ejs:id', (req, res) => {
-    db.Trail.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, products) => {
+router.put('/', (req, res) => {
+    db.Trail.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, trails) => {
         // res.send(entry)
-        res.redirect('/showtrail/' + products._id)
+        res.redirect('/showtrail/' + trails._id)
     })
     // res.send(req.params.id)
 })
 
 //Edit route
 router.get('/:id/edit', (req, res) => {
-    db.Trail.findById(req.params.id, (err, products) => {
+    db.Trail.findById(req.params.id, (err, trails) => {
         res.render("edittrail", {
-            products: products,
+            trails: trails,
             tabTitle: "Edit"
         })
     })
 })
 
 
-// router.put('/:id/buy', (req, res) => {
-//     db.Trail.findById(req.params.id, (err, products) => {
-//         db.Product.findByIdAndUpdate(req.params.id, { qty: products.qty - 1 }, { new: true }, (err, products) => {
-//             res.redirect('/product/' + products._id)
+// router.put('/', (req, res) => {
+//     db.Trail.findById(req.params.id, (err, trails) => {
+//         db.Product.findByIdAndUpdate(req.params.id, { new: true }, (err, trails) => {
+//             res.redirect('/showtrail/' + trails._id)
 //         })
 //     })
 // })
-
-
-
 
 
 module.exports = router;
