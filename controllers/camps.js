@@ -24,7 +24,7 @@ router.post('/', (req, res) => {
 })
 
 //SHOW ROUTE
-router.get('/showcamp:id', (req, res) => {
+router.get('/:id', (req, res) => {
     db.Camp.findById(req.params.id, (err, camps) => {
         res.render("individualCamp", {
             camps: camps,

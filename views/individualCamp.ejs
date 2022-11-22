@@ -6,18 +6,18 @@
 
   <body>
     <%- include ('./partials/head.ejs') %>
-    <div class="flex-container">
-      <a href="/showcamp/"><button>Back to Campsites</button></a>
-      <a href="/camp.js/<%= camp._id %>/edit"><button>Edit Campsite</button></a>
-      <form action="/camp/<%= camp._id %>?_method=DELETE" method="POST">
+    <div>
+      <a href="/showcamp/"><button>Back To Campsites</button></a>
+      <a href="/camps<%= camps._id %>/edit"><button>Edit Campsite</button></a>
+      <form action="/camps<%= camps._id %>?_method=DELETE" method="POST">
         <button type="submit">Delete Campsite</button>
       </form>
     </div>
     <main class="flex-container">
       <div id="camp" class="model-object">
-        <img src="<%" ="camp.image" % /> width="300"/>
-        <h1><%=camp.name%></h1>
-        <p>Description: <%= camp.description %></p>
+        <img src="<%camps.image%>" width="300" />
+        <h1><%=camps.name%></h1>
+        <p>Description: <%=camps.description %></p>
       </div>
     </main>
   </body>
