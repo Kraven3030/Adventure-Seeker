@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/styles/showCamp.css"/>
+  </head>
+  <title>Camps</title>
+  <body>
+    <div class="campPage" id="container">
+      <a href="/"><button>Home</button></a>
+      <button class="addCampBtn">Add Camp</button>
+      <div class="modal1">
+        <div class="modal1-content">
+            <span class="modal1CloseBtn">&times;</span>
+            <form id="modalForm" action="/camps" method="post">
+                <label for="name">Name of Campsite:</label>
+                <input type="text" id="name" name="name" />
+                <label for="description">Description:</label>
+                <textarea name="description"></textarea>
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" />
+                <label for="image">Image URL:</label>
+                <input type="text" id="image" name="image" placeholder="optional" />
+                <button type="submit">Add Campsite</button>
+              </form>       
+        </div>
+      </div>
+        <% for (let camp of camps) {%>
+        <li class="db-camps">
+          <h3><%= camp.name %></h3>
+          <h5>Location: <%= camp.location%></h5>
+          <a href="/camp/<%=camp._id %>">
+            <img src="<%=camp.image%>" width="300" />
+         </a>
+          <p><%= camp.description %></p>
+          <button class="editCampBtn">Edit Campsite</button>
+            <div class="modal2">
+              <div class="modal2-content">
+                <span class="modal2CloseBtn">&times;</span>
+                <form id="modalForm2" action="/camps"<%=camp._id %>?_method=PUT>
+                    <label for="name">Name of Campsite:</label>
+                    <input type="text" id="name2" name="name" value="<%=camp.name%>" />
+                    <label for="description">Description:</label>
+                    <input type="text" id="description2" name="description" value="<%=camp.description %>"/>
+                    <label for="location">Location:</label>
+                    <input type="text" id="location2" name="location" value="<%=camp.location %>" />
+                    <button type="submit">Edit Campsite</button>
+                  </form>       
+              </div>
+            </div>
+          <form
+            id="btn"
+            action="/camps/<%= camp._id%>?_method=DELETE"
+            method="POST"
+          >
+            <button type="submit" id="delete">Delete Campsite</button>
+          </form>
+        </li>
+        <% } %>
+      </div>
+    </div>
+    <script >
+    //Event listeners for Add Trail Modal
+        const addModal = document.getElementsByClassName("modal1");
+        const openAddModal = document.getElementsByClassName("addCampBtn");
+        const closeAddModal = document.getElementsByClassName("modal1CloseBtn")[0];
+
+        openAddModal[0].addEventListener("click", openModal1);
+        closeAddModal.addEventListener("click", closeModal1);
+        window.addEventListener("click", outsideClick);
+
+        function openModal1() {
+            addModal[0].style.display = "block";
+        }
+        
+        function closeModal1() {
+            addModal[0].style.display = "none";
+        }
+        
+        function outsideClick(e) {
+            if (e.target == addModal[0]) {
+                addModal[0].style.display = "none";
+            }
+        }
+        
+    //Event listener for the Edit Modal
+        const editModal = document.getElementsByClassName("modal2");
+        const openEditModal = document.getElementsByClassName("editCampBtn");
+        const closeEditModal = document.getElementsByClassName("modal2CloseBtn")[0];
+
+        openEditModal[0].addEventListener("click", openModal2);
+        closeEditModal.addEventListener("click", closeModal2);
+        window.addEventListener("click", outsideClick2);
+
+        function openModal2() {
+            editModal[0].style.display = "block";
+        }
+        
+        function closeModal2() {
+            editModal[0].style.display = "none";
+        }
+        
+        function outsideClick2(e) {
+            if (e.target == editModal[0]) {
+                editModal[0].style.display = "none";
+            }
+        }
+    </script>
+  </body>
+</html>
