@@ -36,7 +36,7 @@
             <div class="modal2">
               <div class="modal2-content">
                 <span class="modal2CloseBtn">&times;</span>
-                <form id="modalForm2" action="/camps"<%=camp._id %>?_method=PUT>
+                <form id="modalForm2" action="/camps/<%=camp._id %>?_method=PUT" method="post">
                     <label for="name">Name of Campsite:</label>
                     <input type="text" id="name2" name="name" value="<%=camp.name%>" />
                     <label for="description">Description:</label>

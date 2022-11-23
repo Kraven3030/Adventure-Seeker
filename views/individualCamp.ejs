@@ -8,8 +8,7 @@
     <%- include ('./partials/head.ejs') %>
     <div>
       <a href="/showcamp/"><button>Back To Campsites</button></a>
-      <a href="/camps<%= camps._id %>/edit"><button>Edit Campsite</button></a>
-      <form action="/camps<%= camps._id %>?_method=DELETE" method="POST">
+      <form action="/camps/<%= camps._id %>?_method=DELETE" method="POST">
         <button type="submit">Delete Campsite</button>
       </form>
     </div>

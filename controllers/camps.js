@@ -28,7 +28,7 @@ router.get('/:id', (req, res) => {
     db.Camp.findById(req.params.id, (err, camps) => {
         res.render("individualCamp", {
             camps: camps,
-            tabTitle: "Camp: " + camps.name
+            tabTitle: "Camp: "
         })
     })
 })
@@ -45,7 +45,7 @@ router.delete('/:id', (req, res) => {
 router.get('/:id/edit', (req, res) => {
     db.Camp.findById(req.params.id, (err, camps) => {
         res.render("editcamp", {
-            camps: camps,
+            camps: camps
         })
     })
 })
@@ -54,7 +54,7 @@ router.get('/:id/edit', (req, res) => {
 //Update route
 router.put('/:id', (req, res) => {
     db.Camp.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, camps) => {
-        res.redirect('/showcamp/' + camps._id)
+        res.redirect('/showcamp/')
     })
 })
 
