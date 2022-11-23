@@ -40,7 +40,7 @@
             <div class="modal2">
               <div class="modal2-content">
                 <span class="modal2CloseBtn">&times;</span>
-                <form id="modalForm2" action="/trails"<%=trail._id %>?_method=PUT>
+                <form id="modalForm2" action="/trails/<%=trail._id %>?_method=PUT" method="post">
                     <label for="name">Name of Trail:</label>
                     <input type="text" id="name2" name="name" value="<%=trail.name%>" />
                     <label for="distance">Distance(mi):</label>
@@ -51,7 +51,7 @@
                     <input type="text" id="description2" name="description" value="<%=trail.description %>"/>
                     <label for="location">Location:</label>
                     <input type="text" id="location2" name="location" value="<%=trail.location %>" />
-                    <button type="submit">Edit Trail</button>
+                    <button type="submit">Submit Edit Trail</button>
                   </form>       
               </div>
             </div>

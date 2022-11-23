@@ -55,7 +55,7 @@ router.get('/:id/edit', (req, res) => {
 //Update route
 router.put('/:id', (req, res) => {
     db.Trail.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, trails) => {
-        res.redirect('/' + trails._id)
+        res.redirect('/showtrail/')
     })
 })
 
