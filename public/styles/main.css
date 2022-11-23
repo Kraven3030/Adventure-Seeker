@@ -1,8 +1,145 @@
-.container {
+/* .container {
     text-align: center;
     position: relative;
     padding-top: 40vh;
     z-index: 1;
+} */
+
+button {
+    margin-right: 50%;
+    margin-left: 50%
 }
 
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+body{
+  margin: 0;
+  padding: 0;
+}
 
+#slider {
+  height: 100vh;
+	overflow:hidden;
+  font-family: 'Source Code Pro', monospace;  
+}
+#slider figure {
+	position: relative;
+	width: 500%; /* width for 5 slides but will show just 4 */
+	margin: 0;
+	left: 0;
+	animation: 20s slider infinite;
+}
+#slider figure img {
+	width: 20%;
+	float: left;
+}
+#slider figure figcaption{
+	position: absolute;
+  top: 0;
+  margin-top: 5%;
+	animation: 20s sliderCaption cubic-bezier(.5, -1, .5, 2) infinite;
+  font-size: 100px;
+  color: #fff;
+  border: 5px solid #fff;
+  width: calc(20% - 10px);
+  text-align: center;
+}
+
+#slider figure figcaption:before{
+  content: 'Original Text';  /* set if first animation content is empty*/
+  animation-name: sliderCaptionContent;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+}
+
+/*to slide in to the next image*/
+@keyframes slider {
+	0% {
+		left: 0;
+	}
+	20% {
+		left: 0;
+	}
+	25% {
+		left: -100%;
+	}
+	45% {
+		left: -100%;
+	}
+	50% {
+		left: -200%;
+	}
+	70% {
+		left: -200%;
+	}
+	75% {
+		left: -300%;
+	}
+	95% {
+		left: -300%;
+	}
+	100% {
+		left: 0;
+	}
+}
+
+/*to display figcaption in the middle the next image*/
+@keyframes sliderCaption {
+	0% {
+    /*content: "hellow 1"; not working !!?*/
+		left: 0;
+	}
+	20% {
+		left: 0;
+	}
+	25% {
+		left: 20%;
+	}
+	45% {
+		left: 20%;
+	}
+	50% {
+		left: 40%;
+	}
+	70% {
+		left: 40%;
+	}
+	75% {
+		left: 60%;
+	}
+	95% {
+		left: 60%;
+	}
+	100% {
+		left: 0;
+	}
+}
+
+@keyframes sliderCaptionContent {
+	0% {
+    content: "Adventure Seeker";
+	}
+	20% {
+    content: "Adventure Seeker";
+	}
+	25% {
+    content: "Adventure Seeker";
+	}
+	45% {
+    content: "Adventure Seeker";
+	}
+	50% {
+    content: "Adventure Seeker";
+	}
+	70% {
+    content: "Adventure Seeker";
+	}
+	75% {
+    content: "Adventure Seeker";
+	}
+	95% {
+    content: "Adventure Seeker";
+	}
+	100% {
+    content: "Adventure Seeker";
+	}
+}
