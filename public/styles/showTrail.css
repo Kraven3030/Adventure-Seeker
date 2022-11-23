@@ -3,9 +3,22 @@ body {
     list-style:none;
 }
 
-.db-trails {
-    justify-content: center;
+img {
+    border-radius: 25%;
+    height: 300px;
 }
+
+li {
+    text-align: center;
+    padding: 10px;
+}
+
+p {
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+
 
 /* ===================================================
 Add Trail Modal CSS */
