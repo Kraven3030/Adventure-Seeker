@@ -1,3 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@900&display=swap');
+
+header {
+    height: 200vh;
+}
+
+  .container {
+    /* hide fixed overflow contents */
+    clip: rect(0, auto, auto, 0);
+  
+    /* does not work if overflow = visible */
+    overflow: hidden;
+  
+    /* only works with absolute positioning */
+    position: absolute;
+  
+    /* Make sure containers are full-width and height */
+    height: 100vh;
+    left: 0;
+    width: 100%;
+}
+
+
+/* .containerHeader {
+    background: white;
+    top: 0;
+} */
+
+.titleWrapper {
+    position: fixed;
+    display: block;  
+    margin: auto;
+    width: 100%;
+    /* center the text wrapper vertically */
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+}
+
+  .titleWrapper h1 {
+    text-align: center;
+    font-size: 64px;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+}
+
+.containerHeader .titleWrapper h1 {
+    /* the text background */
+    background: url(https://images.unsplash.com/photo-1575058752200-a9d6c0f41945?&q=85);
+    background-size: 100vw auto;
+    background-position: center;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    /* fallback text color */
+    color: black;
+}
+
+.containerImage {
+    background-image: url(https://images.unsplash.com/photo-1575058752200-a9d6c0f41945?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ);
+    background-size:100vw auto;
+    background-position: center;
+    background-attachment: fixed;
+    top: 100vh;
+  }
+
+  .containerImage .titleWrapper h1 {
+    color: white;
+}
+  
+/* ============================================================== */
+
 body {
     background-color: white;
     list-style:none;
@@ -11,14 +86,66 @@ img {
 li {
     text-align: center;
     padding: 10px;
+    font-family: 'Fraunces', serif;
 }
+
 
 p {
     margin-left: 25%;
     margin-right: 25%;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
 }
 
+a {
+    color: black;
+    border-radius: 12px;
+    font-size: 15px;
+}
 
+.editTrailBtn {
+    color: white;
+    background-color: goldenrod;
+    border-radius: 12px;
+    font-size: 15px;
+}
+
+#delete {
+    color: white;
+    background-color: red;
+    border-radius: 12px;
+    font-size: 15px;
+}
+
+.addTrailBtn {
+    color: white;
+    background-color:dodgerblue;
+    border-radius: 12px;
+    font-size: 15px;
+    /* margin-left: 45%; */
+}
+
+.secondAddTrail {
+    color: white;
+    background-color: dodgerblue;
+    border-radius: 12px;
+    font-size: 15px;
+}
+
+.homeBtn {
+    font-size: 20px;
+    padding: 0;
+    z-index: 1000;
+    background-color: black;
+}
+
+.topBtns {
+    align-items: center;
+}
+
+/* .homeBtn , .addTrailBtn {
+    display: inline-block;
+    padding: 5px;
+} */
 
 /* ===================================================
 Add Trail Modal CSS */
@@ -31,18 +158,19 @@ Add Trail Modal CSS */
     top: 0px;
     height: 100%;
     width: 100%;
-    overflow: auto;
+    overflow:hidden;
     background-color: rgba(0, 0, 0, 0.5)
 }
 
 .modal1-content {
-    background-color: gray;
-    margin: 40% auto;
+    background-color: brown;
+    margin: 20% auto;
     padding: 20px;
     width: 70%;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.3);
     animation-name: addModalOpen;
     animation-duration: 1s;
+    text-align: center;
 }
 
 .modal1CloseBtn {
@@ -63,6 +191,8 @@ Add Trail Modal CSS */
     to {opacity: 1;}
 }
 
+
+
 /* =================================================
 Edit Trail Modal CSS */
 
@@ -80,12 +210,13 @@ Edit Trail Modal CSS */
 
 .modal2-content {
     background-color: gray;
-    margin: 40% auto;
+    margin: 20% auto;
     padding: 20px;
     width: 70%;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.3);
     animation-name: editModalOpen;
     animation-duration: 1s;
+    text-align: center;
 }
 
 .modal2CloseBtn {
@@ -104,4 +235,11 @@ Edit Trail Modal CSS */
 @keyframes editModalOpen {
     from{ opacity: 0;}
     to {opacity: 1;}
+}
+
+.submitEditBtn {
+    color: white;
+    background-color: goldenrod;
+    border-radius: 12px;
+    font-size: 15px;
 }

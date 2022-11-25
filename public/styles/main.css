@@ -31,8 +31,9 @@ body{
 
 #slider {
   height: 100vh;
-	overflow:hidden;
-  font-family: 'Source Code Pro', monospace;  
+  overflow:hidden;
+  font-family: 'Fraunces', serif;
+  text-transform: uppercase;  
 }
 #slider figure {
 	position: relative;
