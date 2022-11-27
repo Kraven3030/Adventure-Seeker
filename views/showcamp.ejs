@@ -32,41 +32,45 @@
                 <input type="text" id="location" name="location" />
                 <label for="image">Image URL:</label>
                 <input type="text" id="image" name="image" placeholder="optional" />
-                <button type="submit">Add Campsite</button>
+                <button class="secondAddCamp" type="submit">Add Campsite</button>
               </form>       
         </div>
       </div>
         <% for (let camp of camps) {%>
-        <li class="db-camps">
-          <h3><%= camp.name %></h3>
-          <h5>Location: <%= camp.location%></h5>
-          <a href="/camps/<%=camp._id %>">
-            <img src="<%=camp.image%>" width="300" />
-         </a>
-          <p><%= camp.description %></p>
-          <button class="editCampBtn">Edit Campsite</button>
-            <div class="modal2">
-              <div class="modal2-content">
-                <span class="modal2CloseBtn">&times;</span>
-                <form id="modalForm2" action="/camps/<%=camp._id %>?_method=PUT" method="post">
-                    <label for="name">Name of Campsite:</label>
-                    <input type="text" id="name2" name="name" value="<%=camp.name%>" />
-                    <label for="description">Description:</label>
-                    <input type="text" id="description2" name="description" value="<%=camp.description %>"/>
-                    <label for="location">Location:</label>
-                    <input type="text" id="location2" name="location" value="<%=camp.location %>" />
-                    <button type="submit">Edit Campsite</button>
-                  </form>       
-              </div>
+        <ul class="allCamps">
+          <li class="db-camps">
+            <div class="li-content">
+              <h3><%= camp.name %></h3>
+              <h5>Location: <%= camp.location%></h5>
+              <a href="/camps/<%=camp._id %>">
+                <img src="<%=camp.image%>" width="300" />
+              </a>
+              <p><%= camp.description %></p>
+              <button class="editCampBtn">Edit Campsite</button>
+                <div class="modal2">
+                  <div class="modal2-content">
+                    <span class="modal2CloseBtn">&times;</span>
+                    <form id="modalForm2" action="/camps/<%=camp._id %>?_method=PUT" method="post">
+                        <label for="name">Name of Campsite:</label>
+                        <input type="text" id="name2" name="name" value="<%=camp.name%>" />
+                        <label for="description">Description:</label>
+                        <input type="text" id="description2" name="description" value="<%=camp.description %>"/>
+                        <label for="location">Location:</label>
+                        <input type="text" id="location2" name="location" value="<%=camp.location %>" />
+                        <button type="submitEditBtn">Submit Edit</button>
+                      </form>       
+                  </div>
+                </div>
+              <form
+                id="btn"
+                action="/camps/<%= camp._id%>?_method=DELETE"
+                method="POST"
+              >
+                <button type="submit" id="delete">Delete Campsite</button>
+              </form>
             </div>
-          <form
-            id="btn"
-            action="/camps/<%= camp._id%>?_method=DELETE"
-            method="POST"
-          >
-            <button type="submit" id="delete">Delete Campsite</button>
-          </form>
-        </li>
+          </li>
+      </ul>
         <% } %>
       </div>
     </div>
@@ -116,6 +120,27 @@
                 editModal[0].style.display = "none";
             }
         }
+
+        //Jvascript for campsites animations of li's
+
+        const boxes = document.querySelectorAll(".db-camps");
+
+        window.addEventListener("scroll", checkBoxes);
+
+        checkBoxes();
+        function checkBoxes() {
+        const triggerBottom = (window.innerHeight / 5) * 4;
+
+        boxes.forEach((box) => {
+        const boxTop = box.getBoundingClientRect().top;
+
+        if (boxTop < triggerBottom) {
+        box.classList.add("show");
+        } else {
+        box.classList.remove("show");
+      }
+    });
+  }
     </script>
   </body>
 </html>

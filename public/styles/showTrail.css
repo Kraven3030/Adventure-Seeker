@@ -13,20 +13,14 @@ header {
     /* does not work if overflow = visible */
     overflow: hidden;
   
-    /* only works with absolute positioning */
+   
     position: absolute;
   
-    /* Make sure all.allTrailss are full-width and height */
+    
     height: 100vh;
     left: 0;
     width: 100%;
 }
-
-
-/* .allTrailsHeader {
-    background: white;
-    top: 0;
-} */
 
 .titleWrapper {
     position: fixed;
@@ -119,6 +113,7 @@ ul {
     margin: 0;
     overflow-x: hidden;
     text-align: center;
+    list-style: none;
 }
 
 h3 {
@@ -149,39 +144,12 @@ h3 {
     transform: translateX(0);
 }
 
-
-
-
-
-
-
-  
 /* ============================================================== */
-
-/* body {
-    background-color: white;
-    list-style:none;
-} */
 
 img {
     border-radius: 25%;
     height: 300px;
 } 
-
-/* li {
-    text-align: center;
-    padding: 10px;
-    font-family: 'Fraunces', serif;
-    list-style: none;
-} */
-
-
-/* p {
-    margin-left: 25%;
-    margin-right: 25%;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-    font-size: 25px;
-} */
 
 
 a {
@@ -189,6 +157,12 @@ a {
     border-radius: 12px;
     font-size: 15px;
 } 
+.homeBtn {
+    font-size: 20px;
+    padding: 0;
+    z-index: 1000;
+    background-color: black;
+}
 
 .editTrailBtn {
     color: white;
@@ -218,12 +192,6 @@ a {
     font-size: 15px;
 }
 
-.homeBtn {
-    font-size: 20px;
-    padding: 0;
-    z-index: 1000;
-    background-color: black;
-}
 
 .topBtns {
     align-items: center;
@@ -250,7 +218,7 @@ Add Trail Modal CSS */
 }
 
 .modal1-content {
-    background-color: brown;
+    background-color: #1D1D1D;
     margin: 20% auto;
     padding: 20px;
     width: 80%;
@@ -268,7 +236,7 @@ Add Trail Modal CSS */
 }
 
 .modal1CloseBtn:hover, .modal1CloseBtn:focus {
-    color: black;
+    color: #30bf86;
     text-decoration: none;
     cursor: pointer;
 }
