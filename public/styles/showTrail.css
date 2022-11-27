@@ -1,3 +1,5 @@
+/* CSS for scroll animation  header */
+
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@900&display=swap');
 
 header {
@@ -14,14 +16,14 @@ header {
     /* only works with absolute positioning */
     position: absolute;
   
-    /* Make sure containers are full-width and height */
+    /* Make sure all.allTrailss are full-width and height */
     height: 100vh;
     left: 0;
     width: 100%;
 }
 
 
-/* .containerHeader {
+/* .allTrailsHeader {
     background: white;
     top: 0;
 } */
@@ -70,23 +72,56 @@ header {
   .containerImage .titleWrapper h1 {
     color: white;
 }
+
+/* ============================================================= */
+/* CSS for scroll animation LI's */
+
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px black;
+    background-color:white;
+}
+
+::-webkit-scrollbar-track {
+    background-color:#1D1D1D;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to right, #30bf86, #075870);
+    border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+      background: #075870;
+}
+
+
+
+
+
+
   
 /* ============================================================== */
 
-body {
+/* body {
     background-color: white;
     list-style:none;
-}
+} */
 
 img {
     border-radius: 25%;
-    height: 300px;
-}
+    height: 350px;
+    width: fit-content;
+} 
 
 li {
     text-align: center;
     padding: 10px;
     font-family: 'Fraunces', serif;
+    list-style: none;
 }
 
 
@@ -94,6 +129,7 @@ p {
     margin-left: 25%;
     margin-right: 25%;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    font-size: 25px;
 }
 
 a {
@@ -111,14 +147,14 @@ a {
 
 #delete {
     color: white;
-    background-color: red;
+    background: linear-gradient(#ed213a, #93291e);
     border-radius: 12px;
     font-size: 15px;
 }
 
 .addTrailBtn {
     color: white;
-    background-color:dodgerblue;
+    background:linear-gradient(#30bf86, #075870);
     border-radius: 12px;
     font-size: 15px;
     /* margin-left: 45%; */
@@ -166,7 +202,7 @@ Add Trail Modal CSS */
     background-color: brown;
     margin: 20% auto;
     padding: 20px;
-    width: 70%;
+    width: 80%;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.3);
     animation-name: addModalOpen;
     animation-duration: 1s;

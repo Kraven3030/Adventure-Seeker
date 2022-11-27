@@ -43,40 +43,43 @@
         </div>
       </div>
         <% for (let trail of trails) {%>
-        <li class="db-trails">
-          <h3><%= trail.name %></h3>
-          <h5>Location: <%= trail.location%></h5>
-          <img src="<%=trail.image%>" width="300" />
-          <p><%= trail.description %></p>
-          <h5>Distance: <%= trail.distance%></h5>
-          <h5>Difficulty: <%= trail.difficulty%></h5>
-          <button class="editTrailBtn">Edit trail</button>
-            <div class="modal2">
-              <div class="modal2-content">
-                <span class="modal2CloseBtn">&times;</span>
-                <form id="modalForm2" action="/trails/<%=trail._id %>?_method=PUT" method="post">
-                    <label for="name">Name of Trail:</label>
-                    <input type="text" id="name2" name="name" value="<%=trail.name%>" />
-                    <label for="distance">Distance(mi):</label>
-                    <input type="text" id="distance2" name="distance" value="<%=trail.distance%>" />
-                    <label for="difficulty">Difficulty:</label>
-                    <input type="text" id="difficulty2" name="difficulty" value="<%=trail.difficulty%>" />
-                    <label for="description">Description:</label>
-                    <input type="text" id="description2" name="description" value="<%=trail.description %>"/>
-                    <label for="location">Location:</label>
-                    <input type="text" id="location2" name="location" value="<%=trail.location %>" />
-                    <button class="submitEditBtn" type="submit">Submit Edit</button>
-                  </form>       
-              </div>
-            </div>
-          <form
-            id="btn"
-            action="/trails/<%= trail._id%>?_method=DELETE"
-            method="POST"
-          >
-            <button type="submit" id="delete">Delete Trail</button>
-          </form>
-        </li>
+        <ul class="allHikes">
+          <li class="db-trails">
+            <div class="li-content">
+              <h3><%= trail.name %></h3>
+              <h5>Location: <%= trail.location%></h5>
+              <img src="<%=trail.image%>" width="300" />
+              <p><%= trail.description %></p>
+              <h5>Distance: <%= trail.distance%> | Difficulty: <%= trail.difficulty%></h5>
+              <button class="editTrailBtn">Edit trail</button>
+                <div class="modal2">
+                  <div class="modal2-content">
+                    <span class="modal2CloseBtn">&times;</span>
+                    <form id="modalForm2" action="/trails/<%=trail._id %>?_method=PUT" method="post">
+                        <label for="name">Name of Trail:</label>
+                        <input type="text" id="name2" name="name" value="<%=trail.name%>" />
+                        <label for="distance">Distance(mi):</label>
+                        <input type="text" id="distance2" name="distance" value="<%=trail.distance%>" />
+                        <label for="difficulty">Difficulty:</label>
+                        <input type="text" id="difficulty2" name="difficulty" value="<%=trail.difficulty%>" />
+                        <label for="description">Description:</label>
+                        <input type="text" id="description2" name="description" value="<%=trail.description %>"/>
+                        <label for="location">Location:</label>
+                        <input type="text" id="location2" name="location" value="<%=trail.location %>" />
+                        <button class="submitEditBtn" type="submit">Submit Edit</button>
+                      </form>       
+                  </div>
+                </div>
+              <form
+                id="btn"
+                action="/trails/<%= trail._id%>?_method=DELETE"
+                method="POST"
+              >
+                <button type="submit" id="delete">Delete Trail</button>
+              </form>
+           </div>
+          </li>
+      </ul>
         <% } %>
       </div>
     </div>
@@ -126,6 +129,9 @@
                 editModal[0].style.display = "none";
             }
         }
+        AOS.init({
+  duration: 1200,
+})
     </script>
   </body>
 </html>
