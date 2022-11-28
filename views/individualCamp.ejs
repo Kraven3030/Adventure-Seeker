@@ -2,20 +2,24 @@
 <html lang="en">
   <head>
     <%- include ('./partials/head.ejs') %>
+    <link rel="stylesheet" href="/styles/individualCamp.css" />
   </head>
   <body>
     <%- include ('./partials/head.ejs') %>
     <div>
-      <a href="/showcamp/"><button>Back To Campsites</button></a>
-      <form action="/camps/<%= camps._id %>?_method=DELETE" method="POST">
-        <button type="submit">Delete Campsite</button>
-      </form>
+      <a href="/showcamp/"
+        ><button class="backToCamps">Back To Campsites</button></a
+      >
     </div>
     <main class="flex-container">
       <div id="camp" class="model-object">
-        <img src="<%=camps.image %>" width="300" />
         <h1><%=camps.name%></h1>
+        <h3><%=camps.location%></h3>
+        <img src="<%=camps.image %>" width="300" />
         <p>Description: <%=camps.description %></p>
+        <form action="/camps/<%= camps._id %>?_method=DELETE" method="POST">
+          <button type="submit" id="delete">Delete Campsite</button>
+        </form>
       </div>
     </main>
   </body>

@@ -24,11 +24,7 @@ app.set('view engine', 'ejs')
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: true }));
 
-// an example function that shows how middleware will be run every time a route is accessed
-app.use((req, res, next) => {
-    console.log('I run for all routes');
-    next();
-});
+
 
 // +-+-+-+-+-+-+
 // |R|O|U|T|E|S|
