@@ -57,7 +57,7 @@
                         <input type="text" id="description2" name="description" value="<%=camp.description %>"/>
                         <label for="location">Location:</label>
                         <input type="text" id="location2" name="location" value="<%=camp.location %>" />
-                        <button type="submitEditBtn">Submit Edit</button>
+                        <button class="secondEditBtn" type="submitEditBtn">Submit Edit</button>
                       </form>       
                   </div>
                 </div>
@@ -97,7 +97,7 @@
                 addModal[0].style.display = "none";
             }
         }
-        
+     //===============================================================   
     //Event listener for the Edit Modal
         const editModal = document.getElementsByClassName("modal2");
         const openEditModal = document.getElementsByClassName("editCampBtn");
@@ -108,7 +108,10 @@
         window.addEventListener("click", outsideClick2);
 
         function openModal2() {
-            editModal[0].style.display = "block";
+          for (let i = 0; i < editModal.length; i++) {
+
+            editModal[i].style.display = "block";
+          }
         }
         
         function closeModal2() {
@@ -116,11 +119,14 @@
         }
         
         function outsideClick2(e) {
-            if (e.target == editModal[0]) {
-                editModal[0].style.display = "none";
+          for (let i = 0; i < editModal.length; i++) {
+            
+            if (e.target == editModal[i]) {
+                editModal[i].style.display = "none";
             }
+          }
         }
-
+        //=========================================================
         //Jvascript for campsites animations of li's
 
         const boxes = document.querySelectorAll(".db-camps");

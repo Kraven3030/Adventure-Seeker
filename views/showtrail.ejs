@@ -51,24 +51,24 @@
               <img src="<%=trail.image%>" width="300" />
               <p><%= trail.description %></p>
               <h5>Distance: <%= trail.distance%> | Difficulty: <%= trail.difficulty%></h5>
-              <button class="editTrailBtn">Edit trail</button>
-                <div class="modal2">
-                  <div class="modal2-content">
-                    <span class="modal2CloseBtn">&times;</span>
-                    <form id="modalForm2" action="/trails/<%=trail._id %>?_method=PUT" method="post">
-                        <label for="name">Name of Trail:</label>
-                        <input type="text" id="name2" name="name" value="<%=trail.name%>" />
-                        <label for="distance">Distance(mi):</label>
-                        <input type="text" id="distance2" name="distance" value="<%=trail.distance%>" />
-                        <label for="difficulty">Difficulty:</label>
-                        <input type="text" id="difficulty2" name="difficulty" value="<%=trail.difficulty%>" />
-                        <label for="description">Description:</label>
-                        <input type="text" id="description2" name="description" value="<%=trail.description %>"/>
-                        <label for="location">Location:</label>
-                        <input type="text" id="location2" name="location" value="<%=trail.location %>" />
-                        <button class="submitEditBtn" type="submit">Submit Edit</button>
-                      </form>       
-                  </div>
+              <button type="submit" class="editTrailBtn">Edit trail</button>
+              <div class="modal2" class="editTrailBtn">
+                <div class="modal2-content">
+                  <span class="modal2CloseBtn">&times;</span>
+                  <form id="modalForm2" action="/trails/<%=trail._id %>?_method=PUT" method="post">
+                    <label for="name">Name of Trail:</label>
+                    <input type="text" id="name2" name="name" value="<%=trail.name%>" />
+                    <label for="distance">Distance(mi):</label>
+                    <input type="text" id="distance2" name="distance" value="<%=trail.distance%>" />
+                    <label for="difficulty">Difficulty:</label>
+                    <input type="text" id="difficulty2" name="difficulty" value="<%=trail.difficulty%>" />
+                    <label for="description">Description:</label>
+                    <input type="text" id="description2" name="description" value="<%=trail.description %>"/>
+                    <label for="location">Location:</label>
+                    <input type="text" id="location2" name="location" value="<%=trail.location %>" />
+                    <button class="secondEditBtn" type="submit">Submit Edit</button>
+                  </form>       
+                    </div>
                 </div>
               <form
                 id="btn"
@@ -106,7 +106,7 @@
                 addModal[0].style.display = "none";
             }
         }
-        
+     //========================================================   
     //Event listener for the Edit Modal
         const editModal = document.getElementsByClassName("modal2");
         const openEditModal = document.getElementsByClassName("editTrailBtn");
@@ -117,19 +117,26 @@
         window.addEventListener("click", outsideClick2);
 
         function openModal2() {
-            editModal[0].style.display = "block";
+            for (let i = 0; i < editModal.length; i++) {
+
+              editModal[i].style.display = "block";
+            }
         }
         
         function closeModal2() {
-            editModal[0].style.display = "none";
-        }
+           editModal[0].style.display = "none";
+       }
+
         
         function outsideClick2(e) {
-            if (e.target == editModal[0]) {
-                editModal[0].style.display = "none";
-            }
-        }
+            for (let i = 0; i < editModal.length; i++) {
 
+              if (e.target == editModal[i]) {
+                  editModal[i].style.display = "none";
+            }
+          }
+        }
+        //===================================================
         //Jvascript for trail animations of li's
 
         const boxes = document.querySelectorAll(".db-trails");

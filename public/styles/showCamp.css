@@ -261,6 +261,7 @@ Edit Campsite Modal CSS */
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.3);
     animation-name: editModalOpen;
     animation-duration: 1s;
+    text-align: center;
 }
 
 .modal2CloseBtn {
@@ -271,12 +272,19 @@ Edit Campsite Modal CSS */
 }
 
 .modal2CloseBtn:hover, .modal2CloseBtn:focus {
-    color: black;
+    color: #ff8a00;
     text-decoration: none;
     cursor: pointer;
 }
 
 @keyframes editModalOpen {
     from{ opacity: 0;}
-    to {opacity: 6;}
+    to {opacity: 3;}
+}
+
+.secondEditBtn {
+    color: white;
+    background-color: #ff8a00;
+    border-radius: 12px;
+    font-size: 15px;
 }

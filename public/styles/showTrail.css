@@ -264,7 +264,7 @@ Edit Trail Modal CSS */
 }
 
 .modal2-content {
-    background-color: gray;
+    background-color: #1D1D1D;
     margin: 20% auto;
     padding: 20px;
     width: 70%;
@@ -282,19 +282,19 @@ Edit Trail Modal CSS */
 }
 
 .modal2CloseBtn:hover, .modal2CloseBtn:focus {
-    color: black;
+    color: #30bf86;
     text-decoration: none;
     cursor: pointer;
 }
 
 @keyframes editModalOpen {
     from{ opacity: 0;}
-    to {opacity: 1;}
+    to {opacity: 3;}
 }
 
-.submitEditBtn {
+.secondEditBtn {
     color: white;
-    background-color: goldenrod;
+    background-color: #30bf86;
     border-radius: 12px;
     font-size: 15px;
 }
