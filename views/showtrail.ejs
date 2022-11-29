@@ -48,11 +48,11 @@
             <div class="li-content">
               <h3><%= trail.name %></h3>
               <h5>Location: <%= trail.location%></h5>
-              <img src="<%=trail.image%>" width="300" />
+              <img src="<%=trail.image%>" width="300" alt="<%=trail.name%>" />
               <p><%= trail.description %></p>
               <h5>Distance: <%= trail.distance%> | Difficulty: <%= trail.difficulty%></h5>
-              <button type="submit" class="editTrailBtn">Edit trail</button>
-              <div class="modal2" class="editTrailBtn">
+              <button type="submit" class="editTrailBtn <%=trail._id %>">Edit trail</button>
+              <div class="modal2" id="<%=trail._id %>">
                 <div class="modal2-content">
                   <span class="modal2CloseBtn">&times;</span>
                   <form id="modalForm2" action="/trails/<%=trail._id %>?_method=PUT" method="post">
@@ -107,55 +107,62 @@
             }
         }
      //========================================================   
-    //Event listener for the Edit Modal
-        const editModal = document.getElementsByClassName("modal2");
-        const openEditModal = document.getElementsByClassName("editTrailBtn");
-        const closeEditModal = document.getElementsByClassName("modal2CloseBtn")[0];
+     //Event listener for the Edit Modal
+         const editModal = document.getElementsByClassName("modal2");
+         const openEditModal = document.getElementsByClassName("editTrailBtn");
+         const closeEditModal = document.getElementsByClassName("modal2CloseBtn")[0];
 
-        openEditModal[0].addEventListener("click", openModal2);
-        closeEditModal.addEventListener("click", closeModal2);
-        window.addEventListener("click", outsideClick2);
-
-        function openModal2() {
-            for (let i = 0; i < editModal.length; i++) {
-            editModal[i].style.display = "block";
-            }
-        }
-        
-        function closeModal2() {
-           editModal[0].style.display = "none";
-       }
-
-        
-        function outsideClick2(e) {
-            for (let i = 0; i < editModal.length; i++) {
-
-              if (e.target == editModal[i]) {
-                  editModal[i].style.display = "none";
-            }
+          for (let i = 0; i < openEditModal.length; i++) {
+            openEditModal[i].addEventListener("click", openModal2);
+            console.log(openEditModal[i])
           }
-        }
-        //===================================================
-        //Jvascript for trail animations of li's
 
-        const boxes = document.querySelectorAll(".db-trails");
-
-        window.addEventListener("scroll", checkBoxes);
-
-        checkBoxes();
-        function checkBoxes() {
-        const triggerBottom = (window.innerHeight / 5) * 4;
-
-        boxes.forEach((box) => {
-        const boxTop = box.getBoundingClientRect().top;
-
-        if (boxTop < triggerBottom) {
-        box.classList.add("show");
-        } else {
-        box.classList.remove("show");
+         closeEditModal.addEventListener("click", closeModal2);
+         window.addEventListener("click", outsideClick2);
+         
+         function openModal2(e) {
+          console.log(e.target)
+           for (let i = 0; i < editModal.length; i++) {
+             editModal[i].style.display = "block";
+           }
+         }
+         
+         function closeModal2() {
+           for (let i = 0; i < editModal.length; i++) {
+             editModal[i].style.display = "none";
+           }
+         }
+         
+         
+         function outsideClick2(e) {
+           for (let i = 0; i < editModal.length; i++) {
+             
+             if (e.target == editModal[i]) {
+               editModal[i].style.display = "none";
+             }
+           }
+         }
+     //===================================================
+     //Jvascript for trail animations of li's
+     
+     const boxes = document.querySelectorAll(".db-trails");
+     
+     window.addEventListener("scroll", checkBoxes);
+     
+     checkBoxes();
+     function checkBoxes() {
+       const triggerBottom = (window.innerHeight / 5) * 4;
+       
+       boxes.forEach((box) => {
+         const boxTop = box.getBoundingClientRect().top;
+         
+         if (boxTop < triggerBottom) {
+           box.classList.add("show");
+          } else {
+            box.classList.remove("show");
+          }
+        });
       }
-    });
-  }
-    </script>
+      </script>
   </body>
 </html>
