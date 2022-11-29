@@ -223,6 +223,7 @@ Add Trail Modal CSS */
 }
 
 .modal1-content {
+    color: white;
     background-color: #1D1D1D;
     margin: 20% auto;
     padding: 20px;
