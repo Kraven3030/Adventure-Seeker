@@ -13,7 +13,7 @@ APPROACH:
 I wanted to make a app that was simple and clean. The users can esily navigate to where they want to go without any distractions. Also wanted users to feel in complete control of what content that can be displayed on the site when they add hiking trails or campsites.
 
 UNSOLVED PROBLEMS:
-The homepage styling for mobile devoces doesn't display correctly. This may be due to the image slideshow. Will find a fix eventually so it can have a better for all users no matter the device. 
+The font styling for the individual camps page doesn't align with other pages. Still trying to solve the issue
 
 
 WIREFRAMES:
