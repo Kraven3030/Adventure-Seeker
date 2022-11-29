@@ -46,10 +46,10 @@
                 <img src="<%=camp.image%>" width="300" />
               </a>
               <p><%= camp.description %></p>
-              <button class="editCampBtn">Edit Campsite</button>
-                <div class="modal2">
+              <button class="editCampBtn <%=camp._id %>">Edit Campsite</button>
+                <div class="modal2" id="<%=camp._id %>">
                   <div class="modal2-content">
-                    <span class="modal2CloseBtn">&times;</span>
+                    <span class="modal2CloseBtn <%=camp._id %>">&times;</span>
                     <form id="modalForm2" action="/camps/<%=camp._id %>?_method=PUT" method="post">
                         <label for="name">Name of Campsite:</label>
                         <input type="text" id="name2" name="name" value="<%=camp.name%>" />
@@ -99,33 +99,38 @@
         }
      //===============================================================   
     //Event listener for the Edit Modal
-        const editModal = document.getElementsByClassName("modal2");
-        const openEditModal = document.getElementsByClassName("editCampBtn");
-        const closeEditModal = document.getElementsByClassName("modal2CloseBtn")[0];
+    const editModal = document.getElementsByClassName("modal2");
+    const openEditModal = document.getElementsByClassName("editCampBtn");
+    const closeEditModal = document.getElementsByClassName("modal2CloseBtn");
 
-        openEditModal[0].addEventListener("click", openModal2);
-        closeEditModal.addEventListener("click", closeModal2);
-        window.addEventListener("click", outsideClick2);
+    for (let i = 0; i < openEditModal.length; i++) {
+      openEditModal[i].addEventListener("click", openModal2);
+    }
 
-        function openModal2() {
-          for (let i = 0; i < editModal.length; i++) {
+    for (let i = 0; i < closeEditModal.length; i++) {
+      closeEditModal[i].addEventListener("click", closeModal2);
+    }
 
-            editModal[i].style.display = "block";
-          }
+    window.addEventListener("click", outsideClick2);
+
+    function openModal2(e) {
+      const targetModal = document.getElementById(e.target.classList[1])
+      targetModal.style.display = 'block';
+    }
+
+    function closeModal2(e) {
+      const targetModal = document.getElementById(e.target.classList[1])
+      targetModal.style.display = 'none';
+    }
+
+    function outsideClick2(e) {
+      for (let i = 0; i < editModal.length; i++) {
+
+        if (e.target == editModal[i]) {
+          editModal[i].style.display = "none";
         }
-        
-        function closeModal2() {
-            editModal[0].style.display = "none";
-        }
-        
-        function outsideClick2(e) {
-          for (let i = 0; i < editModal.length; i++) {
-            
-            if (e.target == editModal[i]) {
-                editModal[i].style.display = "none";
-            }
-          }
-        }
+      }
+    }
         //=========================================================
         //Jvascript for campsites animations of li's
 

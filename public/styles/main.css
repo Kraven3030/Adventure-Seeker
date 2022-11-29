@@ -1,220 +1,69 @@
-/* .container nav {
-	text-align: center;
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html {
+	height: 100vh;
+}
+
+nav {
+	/* text-align: center;
 	font-size: 20px;
 	position: fixed;
 	z-index: 1000;
 	justify-items: center;
-	margin-left: 40%;
+	margin-left: 40%; */
+	position: absolute;
+	top: 0;
+	z-index: 1000000;
+	width: 100%;
+	background: rgba(0,0,0,0.75);
+	text-align: center;
+	list-style: none;
+	display: flex;
+	justify-content: space-evenly;
+	height: 5%;
+	align-items: center;
 }
-	
-.container li {
+
+nav li {
 	display: inline-block;
 	padding: 10px 15px;
 	list-style: none;
 }
-	
-.container a {
+
+nav li a {
 	text-decoration: none;
 	color: white;
 }
-	
-.container a:hover {
-		color: black
+
+a:hover {
+	color: rgb(195, 195, 195);
+	text-decoration: underline
 }
-
-
-	
-@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
 
 body{
-		margin: 0;
-		padding: 0;
+	height: 100%;
 }
 
-	
 #slider {
 	height: 100vh;
 	overflow:hidden;
-	font-family: 'Fraunces', serif;
-	text-transform: uppercase;  
+	font-family: "Fraunces", serif;
+	text-transform: uppercase;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
 }
-#slider figure {
-	position: relative;
-	width: 500%; 
-	margin: 0;
-	left: 0;
-	animation: 20s slider infinite;
-}
-#slider figure img {
-	width: 20%;
-	float: left;
-}
-#slider figure figcaption{
-	position: absolute;
-	top: 0;
-	margin-top: 5%;
-	animation: 20s sliderCaption cubic-bezier(.5, -1, .5, 2) infinite;
-	font-size: 100px;
-	color: #fff;
-	width: calc(20% - 10px);
+
+h1 {
+	z-index: 1000;
 	text-align: center;
+	font-family: "Fraunces", serif;
+	color: white;
+	margin-top: 28%;
+	font-size: 40px;
 }
-	
-#slider figure figcaption:before{
-	content: 'Original Text';  
-	animation-name: sliderCaptionContent;
-	animation-duration: 20s;
-	animation-iteration-count: infinite;
-}
-	
-
-@keyframes slider {
-	0% {
-		left: 0;
-	}
-	20% {
-		left: 0;
-	}
-	25% {
-		left: -100%;
-	}
-	45% {
-		left: -100%;
-	}
-	50% {
-		left: -200%;
-	}
-	70% {
-		left: -200%;
-	}
-	75% {
-		left: -300%;
-	}
-	95% {
-		left: -300%;
-	}
-	100% {
-		left: 0;
-	}
-}
-	
-
-@keyframes sliderCaption {
-	0% {
-		
-		left: 0;
-	}
-	20% {
-		left: 0;
-	}
-	25% {
-		left: 20%;
-	}
-	45% {
-		left: 20%;
-	}
-	50% {
-		left: 40%;
-	}
-	70% {
-		left: 40%;
-	}
-	75% {
-		left: 60%;
-	}
-	95% {
-		left: 60%;
-	}
-	100% {
-		left: 0;
-	}
-}
-	
-@keyframes sliderCaptionContent {
-	0% {
-		content: "Adventure Seeker";
-	}
-	20% {
-		content: "Adventure Seeker";
-	}
-	25% {
-		content: "Adventure Seeker";
-	}
-	45% {
-		content: "Adventure Seeker";
-	}
-	50% {
-		content: "Adventure Seeker";
-	}
-	70% {
-		content: "Adventure Seeker";
-	}
-	75% {
-		content: "Adventure Seeker";
-	}
-	95% {
-		content: "Adventure Seeker";
-	}
-	100% {
-		content: "Adventure Seeker";
-	}
-}
-
-	 */
-	
-
-
-	 * {
-		margin: 0;
-		padding: 0;
-		box-sizing: border-box;
-	}
-	html {
-		height: 100vh;
-	}
-	nav {
-		/* text-align: center;
-		font-size: 20px;
-		position: fixed;
-		z-index: 1000;
-		justify-items: center;
-		margin-left: 40%; */
-		position: absolute;
-		top: 0;
-		z-index: 1000000;
-		width: 100%;
-		background: rgba(0,0,0,0.75);
-		text-align: center;
-		list-style: none;
-		display: flex;
-		justify-content: space-evenly;
-		height: 10%;
-		align-items: center;
-	}
-	nav li {
-		display: inline-block;
-		padding: 10px 15px;
-		list-style: none;
-	}
-	nav li a {
-		text-decoration: none;
-		color: white;
-	}
-	a:hover {
-			color: rgb(195, 195, 195);
-			text-decoration: underline
-	}
-	/* CSS bluprint provided by Codepen, Author: MOHAMED ABUELATTA */
-	@import url(‘https://fonts.googleapis.com/css?family=Source+Code+Pro’);
-	body{
-		height: 100%;
-	}
-	#slider {
-		height: 100vh;
-		overflow:hidden;
-		font-family: ‘Fraunces’, serif;
-		text-transform: uppercase;
-		background-size: cover;
-		background-repeat: no-repeat;
-		background-position: center;
-	}
