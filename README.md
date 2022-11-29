@@ -12,10 +12,6 @@ As someone who likes to plan my hikes accordingly, this site helps me see which 
 APPROACH:
 I wanted to make a app that was simple and clean. The users can esily navigate to where they want to go without any distractions. Also wanted users to feel in complete control of what content that can be displayed on the site when they add hiking trails or campsites.
 
-UNSOLVED PROBLEMS:
-The font styling for the individual camps page doesn't align with other pages. Still trying to solve the issue
-
-
 WIREFRAMES:
 -Homepage Wireframe- https://drive.google.com/file/d/1yr_pNOmg3FWUmizY01IsLkWQFLf_z-zd/view?usp=share_link
 -Show pages- https://drive.google.com/file/d/1cjZV5SDHImjf_P6meCwKWHvwEHLtz6JF/view?usp=share_link
