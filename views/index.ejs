@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -39,11 +39,58 @@
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Altja_j%C3%B5gi_Lahemaal.jpg/1200px-Altja_j%C3%B5gi_Lahemaal.jpg"
         />
-
-        <!-- <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5FdlJc7Bl0klIRPes7vleSn9oyL33s3kVqMyFyoK4jF1dCPSIP_AOkTw5-SER63Rp-MU&usqp=CAU"
-        /> -->
       </figure>
     </div>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/main.css" />
+    <title>Adventure Seeker</title>
+  </head>
+
+  <body>
+    <main>
+      <nav>
+        <li>
+          <a href="/showtrail" id="trailBtn">
+            <h1>Seek Trails</h1>
+          </a>
+        </li>
+        <li>
+          <a href="/showcamp" id="campBtn">
+            <h1>Seek Camps</h1>
+          </a>
+        </li>
+      </nav>
+      <div id="slider"></div>
+    </main>
+    <script>
+      const photos = [
+        "https://blog.depositphotos.com/wp-content/uploads/2017/07/Soothing-nature-backgrounds-2.jpg.webp",
+        "https://images.pexels.com/photos/2387418/pexels-photo-2387418.jpeg?cs=srgb&dl=pexels-ezra-comeau-2387418.jpg&fm=jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Altja_j%C3%B5gi_Lahemaal.jpg/1200px-Altja_j%C3%B5gi_Lahemaal.jpg",
+        "https://media.npr.org/assets/img/2018/04/04/gettyimages-937327264-0ffed8630d3555e1c7389d3af280fffec4bcf9ef.jpg",
+      ];
+
+      const slider = document.querySelector("#slider");
+      slider.style.backgroundImage = `url(${photos[0]})`;
+      let position = 1;
+
+      window.setInterval(() => {
+        slider.style.transition = "all 1s ease-out";
+        slider.style.backgroundImage = `url(${photos[position]})`;
+        if (position === photos.length - 1) {
+          position = 0;
+        } else {
+          position++;
+        }
+      }, 5000);
+    </script>
   </body>
 </html>

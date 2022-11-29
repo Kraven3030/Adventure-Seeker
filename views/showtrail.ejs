@@ -1,168 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <link rel="stylesheet" href="/styles/showTrail.css"/>
-  </head>
-  <title>Trails</title>
-  <body>
-    <header>
-    <a class="homeBtn" href="/"><h3>Home</h3></a>
+
+<head>
+  <link rel="stylesheet" href="/styles/showTrail.css" />
+</head>
+<title>Trails</title>
+
+<body>
+  <header>
+    <a class="homeBtn" href="/">
+      <h3>Home</h3>
+    </a>
     <div class=" container containerHeader">
       <div class="titleWrapper">
         <h1>SEEK TRAILS</h1>
       </div>
     </div>
     <div class=" container containerImage">
-        <div class="titleWrapper">
-          <h1>SEEK TRAILS</h1>
-        </div>
+      <div class="titleWrapper">
+        <h1>SEEK TRAILS</h1>
+      </div>
     </div>
   </header>
-    <div class="trailPage" id="container">
-      <div class="topBtns">
-        <button class="addTrailBtn">Add Trail</button>
-      </div>
-      <div class="modal1">
-        <div class="modal1-content">
-            <span class="modal1CloseBtn">&times;</span>
-            <form id="modalForm" action="/trails" method="post">
-                <label for="name">Name of Trail:</label>
-                <input type="text" id="name" name="name" />
-                <label for="distance">Distance(mi):</label>
-                <input type="text" id="distance" name="distance" />
-                <label for="difficulty">Difficulty:</label>
-                <input type="text" id="difficulty" name="difficulty" />
-                <label for="image">Image URL:</label>
-                <input type="text" id="image" name="image" placeholder="optional" />
-                <label for="description">Description:</label>
-                <textarea name="description"></textarea>
-                <label for="location">Location:</label>
-                <input type="text" id="location" name="location" />
-                <button class="secondAddTrail" type="submit">Add Trail</button>
-              </form>       
-        </div>
-      </div>
-        <% for (let trail of trails) {%>
-        <ul class="allHikes">
-          <li class="db-trails">
-            <div class="li-content">
-              <h3><%= trail.name %></h3>
-              <h5>Location: <%= trail.location%></h5>
-              <img src="<%=trail.image%>" width="300" alt="<%=trail.name%>" />
-              <p><%= trail.description %></p>
-              <h5>Distance: <%= trail.distance%> | Difficulty: <%= trail.difficulty%></h5>
-              <button type="submit" class="editTrailBtn <%=trail._id %>">Edit trail</button>
-              <div class="modal2" id="<%=trail._id %>">
-                <div class="modal2-content">
-                  <span class="modal2CloseBtn">&times;</span>
-                  <form id="modalForm2" action="/trails/<%=trail._id %>?_method=PUT" method="post">
-                    <label for="name">Name of Trail:</label>
-                    <input type="text" id="name2" name="name" value="<%=trail.name%>" />
-                    <label for="distance">Distance(mi):</label>
-                    <input type="text" id="distance2" name="distance" value="<%=trail.distance%>" />
-                    <label for="difficulty">Difficulty:</label>
-                    <input type="text" id="difficulty2" name="difficulty" value="<%=trail.difficulty%>" />
-                    <label for="description">Description:</label>
-                    <input type="text" id="description2" name="description" value="<%=trail.description %>"/>
-                    <label for="location">Location:</label>
-                    <input type="text" id="location2" name="location" value="<%=trail.location %>" />
-                    <button class="secondEditBtn" type="submit">Submit Edit</button>
-                  </form>       
-                    </div>
-                </div>
-              <form
-                id="btn"
-                action="/trails/<%= trail._id%>?_method=DELETE"
-                method="POST"
-              >
-                <button type="submit" id="delete">Delete Trail</button>
-              </form>
-           </div>
-          </li>
-      </ul>
-        <% } %>
+  <div class="trailPage" id="container">
+    <div class="topBtns">
+      <button class="addTrailBtn">Add Trail</button>
+    </div>
+    <div class="modal1">
+      <div class="modal1-content">
+        <span class="modal1CloseBtn">&times;</span>
+        <form id="modalForm" action="/trails" method="post">
+          <label for="name">Name of Trail:</label>
+          <input type="text" id="name" name="name" />
+          <label for="distance">Distance(mi):</label>
+          <input type="text" id="distance" name="distance" />
+          <label for="difficulty">Difficulty:</label>
+          <input type="text" id="difficulty" name="difficulty" />
+          <label for="image">Image URL:</label>
+          <input type="text" id="image" name="image" placeholder="optional" />
+          <label for="description">Description:</label>
+          <textarea name="description"></textarea>
+          <label for="location">Location:</label>
+          <input type="text" id="location" name="location" />
+          <button class="secondAddTrail" type="submit">Add Trail</button>
+        </form>
       </div>
     </div>
-    <script >
+    <% for (let trail of trails) {%>
+    <ul class="allHikes">
+      <li class="db-trails">
+        <div class="li-content">
+          <h3><%= trail.name %></h3>
+          <h5>Location: <%= trail.location%></h5>
+          <img src="<%=trail.image%>" width="300" alt="<%=trail.name%>" />
+          <p><%= trail.description %></p>
+          <h5>Distance: <%= trail.distance%> | Difficulty: <%= trail.difficulty%></h5>
+          <button type="submit" class="editTrailBtn <%=trail._id %>">Edit trail</button>
+          <div class="modal2" id="<%=trail._id %>">
+            <div class="modal2-content">
+              <span class="modal2CloseBtn <%=trail._id %>">&times;</span>
+              <form id="modalForm2" action="/trails/<%=trail._id %>?_method=PUT" method="post">
+                <label for="name">Name of Trail:</label>
+                <input type="text" id="name2" name="name" value="<%=trail.name%>" />
+                <label for="distance">Distance(mi):</label>
+                <input type="text" id="distance2" name="distance" value="<%=trail.distance%>" />
+                <label for="difficulty">Difficulty:</label>
+                <input type="text" id="difficulty2" name="difficulty" value="<%=trail.difficulty%>" />
+                <label for="description">Description:</label>
+                <input type="text" id="description2" name="description" value="<%=trail.description %>" />
+                <label for="location">Location:</label>
+                <input type="text" id="location2" name="location" value="<%=trail.location %>" />
+                <button class="secondEditBtn" type="submit">Submit Edit</button>
+              </form>
+            </div>
+          </div>
+          <form id="btn" action="/trails/<%= trail._id%>?_method=DELETE" method="POST">
+            <button type="submit" id="delete">Delete Trail</button>
+          </form>
+        </div>
+      </li>
+    </ul>
+    <% } %>
+  </div>
+  </div>
+  <script>
     //Event listeners for Add Trail Modal
-        const addModal = document.getElementsByClassName("modal1");
-        const openAddModal = document.getElementsByClassName("addTrailBtn");
-        const closeAddModal = document.getElementsByClassName("modal1CloseBtn")[0];
+    const addModal = document.getElementsByClassName("modal1");
+    const openAddModal = document.getElementsByClassName("addTrailBtn");
+    const closeAddModal = document.getElementsByClassName("modal1CloseBtn")[0];
 
-        openAddModal[0].addEventListener("click", openModal1);
-        closeAddModal.addEventListener("click", closeModal1);
-        window.addEventListener("click", outsideClick);
+    openAddModal[0].addEventListener("click", openModal1);
+    closeAddModal.addEventListener("click", closeModal1);
+    window.addEventListener("click", outsideClick);
 
-        function openModal1() {
-            addModal[0].style.display = "block";
-        }
-        
-        function closeModal1() {
-            addModal[0].style.display = "none";
-        }
-        
-        function outsideClick(e) {
-            if (e.target == addModal[0]) {
-                addModal[0].style.display = "none";
-            }
-        }
-     //========================================================   
-     //Event listener for the Edit Modal
-         const editModal = document.getElementsByClassName("modal2");
-         const openEditModal = document.getElementsByClassName("editTrailBtn");
-         const closeEditModal = document.getElementsByClassName("modal2CloseBtn")[0];
+    function openModal1() {
+      addModal[0].style.display = "block";
+    }
 
-          for (let i = 0; i < openEditModal.length; i++) {
-            openEditModal[i].addEventListener("click", openModal2);
-            console.log(openEditModal[i])
-          }
+    function closeModal1() {
+      addModal[0].style.display = "none";
+    }
 
-         closeEditModal.addEventListener("click", closeModal2);
-         window.addEventListener("click", outsideClick2);
-         
-         function openModal2(e) {
-          console.log(e.target)
-           for (let i = 0; i < editModal.length; i++) {
-             editModal[i].style.display = "block";
-           }
-         }
-         
-         function closeModal2() {
-           for (let i = 0; i < editModal.length; i++) {
-             editModal[i].style.display = "none";
-           }
-         }
-         
-         
-         function outsideClick2(e) {
-           for (let i = 0; i < editModal.length; i++) {
-             
-             if (e.target == editModal[i]) {
-               editModal[i].style.display = "none";
-             }
-           }
-         }
-     //===================================================
-     //Jvascript for trail animations of li's
-     
-     const boxes = document.querySelectorAll(".db-trails");
-     
-     window.addEventListener("scroll", checkBoxes);
-     
-     checkBoxes();
-     function checkBoxes() {
-       const triggerBottom = (window.innerHeight / 5) * 4;
-       
-       boxes.forEach((box) => {
-         const boxTop = box.getBoundingClientRect().top;
-         
-         if (boxTop < triggerBottom) {
-           box.classList.add("show");
-          } else {
-            box.classList.remove("show");
-          }
-        });
+    function outsideClick(e) {
+      if (e.target == addModal[0]) {
+        addModal[0].style.display = "none";
       }
-      </script>
-  </body>
+    }
+    //========================================================   
+    //Event listener for the Edit Modal
+    const editModal = document.getElementsByClassName("modal2");
+    const openEditModal = document.getElementsByClassName("editTrailBtn");
+    const closeEditModal = document.getElementsByClassName("modal2CloseBtn");
+
+    for (let i = 0; i < openEditModal.length; i++) {
+      openEditModal[i].addEventListener("click", openModal2);
+    }
+
+    for (let i = 0; i < closeEditModal.length; i++) {
+      closeEditModal[i].addEventListener("click", closeModal2);
+    }
+
+    window.addEventListener("click", outsideClick2);
+
+    function openModal2(e) {
+      const targetModal = document.getElementById(e.target.classList[1])
+      targetModal.style.display = 'block';
+    }
+
+    function closeModal2(e) {
+      const targetModal = document.getElementById(e.target.classList[1])
+      targetModal.style.display = 'none';
+    }
+
+    function outsideClick2(e) {
+      for (let i = 0; i < editModal.length; i++) {
+
+        if (e.target == editModal[i]) {
+          editModal[i].style.display = "none";
+        }
+      }
+    }
+    //===================================================
+    //Jvascript for trail animations of li's
+
+    const boxes = document.querySelectorAll(".db-trails");
+
+    window.addEventListener("scroll", checkBoxes);
+
+    checkBoxes();
+
+    function checkBoxes() {
+      const triggerBottom = (window.innerHeight / 5) * 4;
+
+      boxes.forEach((box) => {
+        const boxTop = box.getBoundingClientRect().top;
+
+        if (boxTop < triggerBottom) {
+          box.classList.add("show");
+        } else {
+          box.classList.remove("show");
+        }
+      });
+    }
+  </script>
+</body>
+
 </html>
