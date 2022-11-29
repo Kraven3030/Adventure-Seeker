@@ -16,11 +16,71 @@
         <h1><%=camps.name%></h1>
         <h3><%=camps.location%></h3>
         <img src="<%=camps.image %>" width="300" />
-        <p>Description: <%=camps.description %></p>
+        <p><%=camps.description %></p>
+        <button class="editCampBtn <%=camps._id %>">Edit Campsite</button>
+        <div class="modal3" id="<%camps._id%>">
+          <div class="modal3-content">
+            <span class="modal3CloseBtn <%=camps._id%>">&times;</span>
+            <form
+              id="modalForm3"
+              action="/camps/<%=camps._id %>?_method=PUT"
+              method="post"
+            >
+              <label for="name">Name of Campsite:</label>
+              <input
+                type="text"
+                id="name3"
+                name="name"
+                value="<%=camps.name%>"
+              />
+              <label for="description">Description:</label>
+              <input
+                type="text"
+                id="description3"
+                name="description"
+                value="<%=camps.description %>"
+              />
+              <label for="location">Location:</label>
+              <input
+                type="text"
+                id="location3"
+                name="location"
+                value="<%=camps.location %>"
+              />
+              <button class="secondEditBtn" type="submitEditBtn">
+                Submit Edit
+              </button>
+            </form>
+          </div>
+        </div>
         <form action="/camps/<%= camps._id %>?_method=DELETE" method="POST">
           <button type="submit" id="delete">Delete Campsite</button>
         </form>
       </div>
     </main>
+    <script>
+      const editModal = document.getElementsByClassName("modal3");
+      const openEditModal = document.getElementsByClassName("editCampBtn");
+      const closeEditModal =
+        document.getElementsByClassName("modal3CloseBtn")[0];
+
+      openEditModal[0].addEventListener("click", openModal3);
+      closeEditModal.addEventListener("click", closeModal3);
+      window.addEventListener("click", outsideClick);
+
+      function openModal3() {
+        editModal[0].style.display = "block";
+      }
+
+      function closeModal3() {
+        editModal[0].style.display = "none";
+      }
+
+      function outsideClick(e) {
+        if (e.target == editModal[0]) {
+          editModal[0].style.display = "none";
+        }
+      }
+    </script>
   </body>
 </html>

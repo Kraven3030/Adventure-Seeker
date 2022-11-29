@@ -44,7 +44,7 @@ h1 {
     margin: 100px;
     border-radius: 10px;
     animation: 3s bounce ease infinite;
-    font-family: 'Fraunces', serif;
+    font-family: "Fraunces", serif;
 }
 
 img {
@@ -58,3 +58,60 @@ img {
     }
 }
 
+.editCampBtn {
+    color: white;
+    background-color: goldenrod;
+    border-radius: 12px;
+    font-size: 15px;
+}
+
+/* ============================================================== */
+/* CSS for modal */
+
+.modal3 {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.5)
+}
+
+.modal3-content {
+    background-color: #1D1D1D;
+    margin: 20% auto;
+    padding: 20px;
+    width: 70%;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.3);
+    animation-name: editModalOpen;
+    animation-duration: 1s;
+    text-align: center;
+}
+
+.modal3CloseBtn {
+    float: right;
+    color: white;
+    font-size: 20px;
+    
+}
+
+.modal3CloseBtn:hover, .modal3CloseBtn:focus {
+    color: #ff8a00;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@keyframes editModalOpen {
+    from{ opacity: 0;}
+    to {opacity: 3;}
+}
+
+.secondEditBtn {
+    color: white;
+    background-color: #ff8a00;
+    border-radius: 12px;
+    font-size: 15px;
+}
