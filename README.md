@@ -1,7 +1,7 @@
 # Adventure-Seeker
 A Node.js web application powered by Express and MongoDB that users can use to upload, edit or delete camping sites and hiking trails.
 
-<img width="1438" alt="Screen Shot 2022-11-28 at 8 38 12 AM" src="https://user-images.githubusercontent.com/114965290/204386137-6a480231-d663-492d-8471-1b3bc70b9936.png">
+<img width="1440" alt="Screen Shot 2022-11-29 at 9 23 40 AM" src="https://user-images.githubusercontent.com/114965290/204599332-48941167-bc10-4720-9aac-9b649729a97d.png">
 LIST OF TECHNOLOGIES USED -Javascript -HTML -CSS -Node.js -MongoDB -Express
 
 USER STORIES:
