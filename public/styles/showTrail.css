@@ -9,14 +9,10 @@ header {
   .container {
     /* hide fixed overflow contents */
     clip: rect(0, auto, auto, 0);
-  
+
     /* does not work if overflow = visible */
     overflow: hidden;
-  
-   
     position: absolute;
-  
-    
     height: 100vh;
     left: 0;
     width: 100%;
@@ -151,17 +147,26 @@ img {
     height: 300px;
 } 
 
+body {
+    text-align: center;
+}
 
 a {
     color: black;
     border-radius: 12px;
     font-size: 15px;
+    display: inline-block;
 } 
 .homeBtn {
     font-size: 20px;
     padding: 0;
     z-index: 1000;
-    background-color: black;
+}
+
+.campLink {
+    font-size: 20px;
+    padding: 0;
+    z-index: 1000;
 }
 
 .editTrailBtn {
@@ -182,7 +187,7 @@ a {
     color: white;
     background:linear-gradient(#30bf86, #075870);
     border-radius: 12px;
-    font-size: 15px;
+    font-size: 20px;
 }
 
 .secondAddTrail {

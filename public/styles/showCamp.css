@@ -151,16 +151,26 @@ img {
     height: 300px;
 }
 
+body {
+    text-align: center;
+}
+
 a {
     color: black;
     border-radius: 12px;
     font-size: 15px;
+    display: inline-block;
 }
 .homeBtn {
     font-size: 20px;
     padding: 0;
     z-index: 1000;
-    background-color: black;
+}
+
+.trailLink {
+    font-size: 20px;
+    padding: 0;
+    z-index: 1000;
 }
 
 .editCampBtn {
@@ -181,7 +191,7 @@ a {
     color: white;
     background:linear-gradient(#ff8a00, #da1b60);
     border-radius: 12px;
-    font-size: 15px;
+    font-size: 20px;
 }
 
 .secondAddCamp {
