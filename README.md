@@ -6,7 +6,9 @@ LIST OF TECHNOLOGIES USED -Javascript -HTML -CSS -Node.js -MongoDB -Express
 
 USER STORIES:
 As a routine hiker, I want to use this site to see or share local trails in my area.
+
 As a person who loves the outdoors, this site allows me to be more adventurous.
+
 As someone who likes to plan my hikes accordingly, this site helps me see which ones will be more difficult.
 
 APPROACH:
