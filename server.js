@@ -71,5 +71,4 @@ app.use('/camps', campsCtrl)
 // +-+-+-+-+-+-+-+-+
 // `app.listen()` binds and listens for the connections on the specified host and port
 app.listen(port, () => {
-    console.log(`App is running at localhost:${port}`)
 })
