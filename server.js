@@ -66,3 +66,10 @@ app.use('/trails', trailsCtrl)
 
 app.use('/camps', campsCtrl)
 
+// +-+-+-+-+-+-+-+-+
+// |L|I|S|T|E|N|E|R|
+// +-+-+-+-+-+-+-+-+
+// `app.listen()` binds and listens for the connections on the specified host and port
+app.listen(port, () => {
+    console.log(`App is running at localhost:${port}`)
+})
