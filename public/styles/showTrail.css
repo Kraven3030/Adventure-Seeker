@@ -1,5 +1,7 @@
 /* CSS for scroll animation  header */
 
+/* CSS bluprint found on codepen */
+
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@900&display=swap');
 
 header {
@@ -9,8 +11,6 @@ header {
   .container {
     /* hide fixed overflow contents */
     clip: rect(0, auto, auto, 0);
-
-    /* does not work if overflow = visible */
     overflow: hidden;
     position: absolute;
     height: 100vh;
@@ -47,8 +47,6 @@ header {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
-    /* fallback text color */
-    color: black;
 }
 
 .containerImage {

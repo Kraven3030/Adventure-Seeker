@@ -114,6 +114,7 @@
 
     window.addEventListener("click", outsideClick2);
 
+        //funtions that target the classlist for each modal
     function openModal2(e) {
       const targetModal = document.getElementById(e.target.classList[1])
       targetModal.style.display = 'block';
@@ -124,6 +125,7 @@
       targetModal.style.display = 'none';
     }
 
+        //Allows you to close the modal just by clicking outside the modal box
     function outsideClick2(e) {
       for (let i = 0; i < editModal.length; i++) {
 
@@ -139,10 +141,11 @@
 
         window.addEventListener("scroll", checkBoxes);
 
+         //Innerheight returns the interior height of the window
         checkBoxes();
         function checkBoxes() {
         const triggerBottom = (window.innerHeight / 5) * 4;
-
+         //Funtion that gets the boxes to slide in while scrolling down
         boxes.forEach((box) => {
         const boxTop = box.getBoundingClientRect().top;
 
