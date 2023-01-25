@@ -1,5 +1,5 @@
 # Adventure-Seeker
-A Node.js web application powered by Express and MongoDB that users can use to upload, edit or delete camping sites and hiking trails.
+This web application was built using Node.js, Express, and MongoDB. The application provides users with the ability to upload, edit, and delete camping sites and hiking trails. The use of the Express framework allows for the handling of routing and middleware, while MongoDB serves as the back-end database for storing and managing the camping sites and hiking trails data. Overall, this application offers a user-friendly and efficient solution for managing and sharing information about outdoor recreational locations.
 
 <img width="1440" alt="Screen Shot 2022-11-29 at 9 23 40 AM" src="https://user-images.githubusercontent.com/114965290/204599332-48941167-bc10-4720-9aac-9b649729a97d.png">
 LIST OF TECHNOLOGIES USED -Javascript -HTML -CSS -Node.js -MongoDB -Express
