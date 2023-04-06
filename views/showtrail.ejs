@@ -124,7 +124,7 @@
     }
 
     window.addEventListener("click", outsideClick2);
-    
+
     //funtions that target the classlist for each modal
     function openModal2(e) {
       const targetModal = document.getElementById(e.target.classList[1])
@@ -158,7 +158,7 @@
       //Funtion that gets the boxes to slide in while scrolling down
       boxes.forEach((box) => {
         const boxTop = box.getBoundingClientRect().top;
-
+        //This triggers the bottom boxes to start sliding as you scroll down
         if (boxTop < triggerBottom) {
           box.classList.add("show");
         } else {
